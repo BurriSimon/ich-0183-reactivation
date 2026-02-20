@@ -21,6 +21,8 @@ class Router
         $className = "App\\Controllers\\{$className}Controller";
 
         $controller = new $className();
+        $controller->before();
         $controller->$methodName();
+        $controller->after();
     }
 }
